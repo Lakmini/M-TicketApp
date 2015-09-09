@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">M-Ticket</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="welcome_txt">M-TICKET</string>
+    <string name="email">Email Address</string>
+    <string name="phone_num">Phone Number</string>
+    <string name="login">SIGN IN</string>
+    <string name="login_ui">LOGIN</string>
+    <string name="defaultmsg">Message sent by railway department will appear here.</string>
+    <string name="msg_title">Message</string>
+    <string name="user_title">Message</string>
+    <string name="passwordHint">Password</string>
+    <string name="username_text">User name</string>
+    <string name="register">Don\'t have an account ?</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="date">DD/MM/YYYY</string>
+    <string name="time">hr:mm</string>
+    <string name="senderId">551974697062</string>
+    <string name="API_key">AIzaSyAvJRgHilmNgr-1yl7Zdljqov90OT4xzi8</string>
+    <string name="title_activity_dynamic_train_details">DynamicTrainDetailsActivity</string>
+    <string name="action_logut">Sign Out</string>
+    <string name="spinner_title">Select Category</string>
+    <string-array name="stationList">
+
+        <item >Matara</item>
+        <item >Weligama</item>
+        <item >Aluthgama</item>
+        <item >Ambalangoda</item>
+        <item >Balapitiya</item>
+        <item >Beruwala</item>
+        <item >Boossa</item>
+        <item >Colombo</item>
+        <item >Galle</item>
+        <item >Hikkaduwa</item>
+        <item >Induruwa</item>
+        <item >Kaluthara</item>
+        <item >Moratuwa</item>
+        <item >Wadduwa</item>
+
+    </string-array>
+    
+
+</resources>

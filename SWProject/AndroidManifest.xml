@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.m_ticket"
+    android:versionCode="1"
+    android:versionName="1.0" >
+    
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+    
+    <!-- GCM connects to Internet Services. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- GCM requires a Google account. -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <!-- Keeps the processor from sleeping when a message is received. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- Creates a custom permission so only this app can receive its messages. -->
+    <permission
+        android:name="com.m_ticket.services.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.m_ticket.services.permission.C2D_MESSAGE" />
+     <!-- This app has permission to register and receive data message. -->
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+     <!-- Network State Permissions to detect Internet status -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+     <!-- Permission to vibrate -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name">
+       <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="com.m_ticket.activity.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" 
+            android:noHistory="true" 
+            
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity
+            android:name="com.m_ticket.activity.RegisterActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" >
+            <intent-filter>
+                <action android:name="com.example.m_ticket.REGISTER" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.m_ticket.activity.GridActivity"
+            android:label="@string/app_name"
+            android:theme="@style/MyTheme" >
+            <intent-filter>
+                <action android:name="com.example.m_ticket.GRID" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.m_ticket.activity.OnlineReservationActivity"
+            android:icon="@drawable/counter128"
+            android:label="Online Reservation"
+            android:theme="@style/MyTheme" >
+            <intent-filter>
+                <action android:name="com.example.m_ticket.ONLINERESERVATION" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.m_ticket.activity.ViewTicketActivity"
+            android:icon="@drawable/tickets_256"
+            android:label="Ticket Details"
+            android:theme="@style/MyTheme" >
+            <intent-filter>
+                <action android:name="com.example.m_ticket.VIEWTICKET" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.m_ticket.activity.TrainScheduleActivity"
+            android:icon="@drawable/schedule"
+            android:label="Train Schedule"
+            android:theme="@style/MyTheme" >
+            <intent-filter>
+                <action android:name="com.example.m_ticket.TRAINSCHEDULEACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.m_ticket.activity.NotificationActivity"
+            android:icon="@drawable/msg128"
+            android:label="Notifications"
+            android:theme="@style/MyTheme" >
+            <intent-filter>
+                <action android:name="com.example.m_ticket.NOTIFICATIONACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+         <activity
+            android:name="com.m_ticket.activity.DynamicTrainListActivity"
+            android:icon="@drawable/train"
+            android:label="Train Shedule"
+            android:theme="@style/MyTheme" >
+            <intent-filter>
+                <action android:name="com.example.m_ticket.DYNAMICTRAINLISTACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+          
+        <!-- Register Broadcast receiver -->
+        <receiver
+            android:name="com.m_ticket.services.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                 <category android:name="com.m_ticket.services" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Register Service -->
+        <service android:name="com.m_ticket.services.GCMNotificationIntentService" />
+
+        <activity
+            android:name=".DynamicTrainDetailsActivity"
+            android:label="@string/title_activity_dynamic_train_details" >
+        </activity>
+    </application>
+
+</manifest>
